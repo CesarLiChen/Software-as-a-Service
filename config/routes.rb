@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   
   # Can also be [get 'contacts/new, to: 'contacts#new'] but
   # the below has more functionality
-  resources :contacts 
-  get 'contact-us', to: 'contacts#new'
+  resources :contacts, only: :create
+  get 'contact-us', to: 'contacts#new', as: 'new_contact'
 end
